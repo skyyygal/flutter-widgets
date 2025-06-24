@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:understanding_widgets/my_widget.dart';
+import 'package:understanding_widgets/scroll%20controller/scroll_controller2.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: ScrollControllerScreen2(),
     );
   }
 }
