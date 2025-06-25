@@ -6,14 +6,33 @@ class GridviewCustomScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Gridview")),
-      body: GridView.builder(
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
-        ),
-        itemBuilder: (context, index) {
-          return _buildGridElement(index);
-        },
+      appBar: AppBar(title: Text("Gridview custom")),
+      body: Column(
+        children: [
+          // GridView.custom(
+          //   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          //     crossAxisCount: 2,
+          //   ),
+          //   childrenDelegate: SliverChildListDelegate([
+          //     _buildGridElement(1),
+          //     _buildGridElement(2),
+          //   ]),
+          // ),
+          // SizedBox(height: 20),
+          Expanded(
+            child: GridView.custom(
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+              ),
+              childrenDelegate: SliverChildBuilderDelegate(childCount: 10, (
+                context,
+                index,
+              ) {
+                return _buildGridElement(index);
+              }),
+            ),
+          ),
+        ],
       ),
     );
   }
