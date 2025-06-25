@@ -9,6 +9,33 @@ class CarouselSliderScreen extends StatefulWidget {
 
 class _CarousalSliderScreenState extends State<CarouselSliderScreen> {
   late final PageController pageController;
+
+  final List<Map<String, dynamic>> carouselMap = [
+    {
+      "title": "Tea",
+      "price": 10,
+      "image":
+          "https://images.unsplash.com/photo-1544787219-7f47ccb76574?q=80&w=1021&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
+    {
+      "title": "Ice cream",
+      "price": 10,
+      "image":
+          "https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
+    {
+      "title": "Pizza",
+      "Price": 10,
+      "image":
+          "https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
+    {
+      "title": "Pasta",
+      "Price": 10,
+      "image":
+          "https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?q=80&w=1160&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
+  ];
   @override
   void initState() {
     pageController = PageController(initialPage: 0, viewportFraction: 0.85);
@@ -24,7 +51,7 @@ class _CarousalSliderScreenState extends State<CarouselSliderScreen> {
             SizedBox(
               height: 200,
               child: PageView.builder(
-                itemCount: 7,
+                itemCount: carouselMap.length,
                 itemBuilder: (_, index) {
                   return AnimatedBuilder(
                     animation: pageController,
@@ -36,13 +63,25 @@ class _CarousalSliderScreenState extends State<CarouselSliderScreen> {
                       margin: EdgeInsets.only(
                         left: 12,
                         right: 12,
-                        top: 50,
+                        top: 30,
                         bottom: 12,
                       ),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(24),
-                        color: Colors.orangeAccent,
+                        // color: Colors.orangeAccent,
                       ),
+                      child: Container(
+                        margin: EdgeInsets.all(12),
+                        child: ClipRRect(
+                          borderRadius: BorderRadiusGeometry.circular(24),
+                          child: Image.network(
+                            "${carouselMap.elementAt(index)["image"]}",
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ),
+
+                      // child: Text("Irem: "),
                     ),
                   );
                 },
