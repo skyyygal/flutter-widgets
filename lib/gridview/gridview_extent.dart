@@ -8,8 +8,27 @@ class GridviewExtentScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("GridviewCount widget")),
-      body: GridView.extent(maxCrossAxisExtent: 2),
+      appBar: AppBar(title: Text("GridviewExtent widget")),
+      body: GridView.extent(
+        maxCrossAxisExtent: 300,
+        mainAxisSpacing: 10,
+        crossAxisSpacing: 10,
+
+        children: [
+          _buildGridElement(1),
+          _buildGridElement(2),
+          _buildGridElement(3),
+          _buildGridElement(4),
+          _buildGridElement(5),
+          _buildGridElement(6),
+          _buildGridElement(7),
+          _buildGridElement(8),
+          _buildGridElement(9),
+          _buildGridElement(10),
+          _buildGridElement(11),
+          _buildGridElement(12),
+        ],
+      ),
     );
   }
 }
