@@ -13,7 +13,6 @@ class GridviewExtentScreen extends StatelessWidget {
         maxCrossAxisExtent: 300,
         mainAxisSpacing: 10,
         crossAxisSpacing: 10,
-
         children: [
           _buildGridElement(1),
           _buildGridElement(2),
