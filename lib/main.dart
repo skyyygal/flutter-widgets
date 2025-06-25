@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:understanding_widgets/corousel%20slider/carousel_slider.dart';
+import 'package:understanding_widgets/Date%20and%20time%20picker/date_time_picker.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: CarouselSliderScreen(),
+      home: DateTimePickerScreen(),
     );
   }
 }
