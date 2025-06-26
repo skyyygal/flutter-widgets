@@ -8,8 +8,8 @@ class DateTimePicker extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final selectedDate = ref.read(dateAndTimeProvider.select((d) => d.date));
-    final selectedTime = ref.read(dateAndTimeProvider.select((d) => d.time));
+    final selectedDate = ref.watch(dateAndTimeProvider.select((d) => d.date));
+    final selectedTime = ref.watch(dateAndTimeProvider.select((d) => d.time));
     final textController = ref.watch(textControllerProvider);
     // final tasks = ref.watch(taskProvider);
 
