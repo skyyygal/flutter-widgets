@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:understanding_widgets/video%20player/video_player_screen.dart';
+import 'package:understanding_widgets/Hero%20Animation/hero_animation_screen.dart';
 
 void main() {
   runApp(
@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: VideoPlayerScreens(),
+      home: HeroAnimationScreen(),
     );
   }
 }
